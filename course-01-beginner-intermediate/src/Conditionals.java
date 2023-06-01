@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Conditionals {
@@ -13,15 +15,18 @@ public class Conditionals {
         return terminal;
     }
 
+    public static int loadNumber(String dataEntry) {
+        Scanner enterNumber = terminal(dataEntry);
+        return enterNumber.nextInt();
+    }
+
     // TODO: 2023-05-01 Exercises
-    
     public static void programNumberOne() {
         // TODO: 2023-05-01 Validate that only people of legal age can enter the university.
         System.out.println("----------------------------");
         System.out.println("Exercises Number One");
 
-        Scanner enterAge = terminal("Enter age");
-        int age = enterAge.nextInt();
+        int age = loadNumber("Enter age");
         boolean isOlder = age >= 18;
 
         if (isOlder) {
@@ -33,34 +38,41 @@ public class Conditionals {
         }
         System.out.println("----------------------------");
     }
-    
+
     public static void programNumberTwo() {
         // TODO: 2023-05-01 Enter three numbers and identity which is greater and lesser.
-        Scanner enterNumberOne = terminal("Enter number one");
-        int numberOne = enterNumberOne.nextInt();
-        Scanner enterNumberTwo = terminal("Enter number two");
-        int numberTwo = enterNumberTwo.nextInt();
-        Scanner enterNumberThree = terminal("Enter number three");
-        int numberThree = enterNumberThree.nextInt();
+        int numberOne = loadNumber("Enter number one");
+        int numberTwo = loadNumber("Enter number two");
+        int numberThree = loadNumber("Enter number three");
 
+        int biggerNumber = calculateLargerNumber(numberOne, numberTwo, numberThree);
+        int minorNumber = calculateSmallerNumber(numberOne, numberTwo, numberThree);
+
+        System.out.println("the number "+biggerNumber+ " is greater.");
+        System.out.println("the number "+minorNumber+ " is less.");
+    }
+
+    // TODO: 2023-05-31 calculate larger number
+    public static int calculateLargerNumber(int numberOne, int numberTwo, int numberThree) {
         int biggerNumber = numberOne;
-        int minorNumber = numberOne;
-
         if (numberTwo > biggerNumber) {
             biggerNumber = numberTwo;
         }
         if (numberThree > biggerNumber) {
             biggerNumber = numberThree;
         }
+        return biggerNumber;
+    }
 
+    // TODO: 2023-05-31 calculate smaller number 
+    public static int calculateSmallerNumber(int numberOne, int numberTwo, int numberThree) {
+        int minorNumber = numberOne;
         if (numberTwo < minorNumber) {
             minorNumber = numberTwo;
         }
         if (numberThree < minorNumber) {
             minorNumber = numberThree;
         }
-
-        System.out.println("the number "+biggerNumber+ " is greater.");
-        System.out.println("the number "+minorNumber+ " is less.");
+        return minorNumber;
     }
 }
