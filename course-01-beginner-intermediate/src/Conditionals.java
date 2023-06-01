@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class Conditionals {
@@ -48,8 +46,10 @@ public class Conditionals {
         int biggerNumber = calculateLargerNumber(numberOne, numberTwo, numberThree);
         int minorNumber = calculateSmallerNumber(numberOne, numberTwo, numberThree);
 
+        String averageNumber = calculateAverageNumber(numberOne, numberTwo, numberThree);
         System.out.println("the number "+biggerNumber+ " is greater.");
         System.out.println("the number "+minorNumber+ " is less.");
+        System.out.println("the average number is: " + averageNumber);
     }
 
     // TODO: 2023-05-31 calculate larger number
@@ -74,5 +74,10 @@ public class Conditionals {
             minorNumber = numberThree;
         }
         return minorNumber;
+    }
+
+    public static String calculateAverageNumber(int numberOne, int numberTwo, int numberThree) {
+        double suma = numberOne + numberTwo + numberThree;
+        return String.format("%.3f", suma / 3);
     }
 }
