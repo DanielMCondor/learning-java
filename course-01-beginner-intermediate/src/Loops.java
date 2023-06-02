@@ -34,6 +34,9 @@ public class Loops {
 
     public static void programNumberTwo() {
         // TODO: 2023-06-01 show the first 100 prime numbers
+        System.out.println("-------------------------------");
+        System.out.println("show the first 100 prime numbers");
+        System.out.println("-------------------------------\n");
         String result = "";
         int count = 0;
         int number = 1;
