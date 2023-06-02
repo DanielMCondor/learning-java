@@ -2,8 +2,8 @@ import java.util.Scanner;
 
 public class Conditionals {
     public static void main(String[] args) {
-        //Conditionals.programNumberOne();Conditionals.programNumberTwo();
-        Conditionals.ProgramNumberThree();
+        //Conditionals.programNumberOne();
+        Conditionals.programNumberTwo();
     }
 
     // TODO: 2023-05-01 create terminal
@@ -50,24 +50,6 @@ public class Conditionals {
         System.out.println("the number "+biggerNumber+ " is greater.");
         System.out.println("the number "+minorNumber+ " is less.");
         System.out.println("the average number is: " + averageNumber);
-    }
-    
-    public static void ProgramNumberThree() {
-        // TODO: 2023-06-01 Enter a list of numbers separated by commas and identify odd and even numbers
-        System.out.println("-------------------------------");
-        System.out.println("Identify odd and even numbers");
-        System.out.println("-------------------------------\n");
-
-        Scanner enterNumbers = terminal("Enter numbers separated by commas (,)");
-        String strNumbers = enterNumbers.next();
-        System.out.println("the list entered is: "+ strNumbers);
-        String[] listNumbers = strNumbers.split(",");
-        for (String strNumber : listNumbers) {
-            int number = Integer.parseInt(strNumber);
-            boolean isEven = number % 2 == 0;
-            String text = isEven ? "even" : "odd";
-            System.out.println("the number "+number+" is "+text);
-        }
     }
 
     // TODO: 2023-05-31 calculate larger number
