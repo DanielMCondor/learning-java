@@ -14,7 +14,7 @@ public class Arrays {
         return terminal.next();
     }
 
-    // TODO: 2023-06-02 Array - Enter three numbers and display in an array
+    // TODO: 2023-06-02 Array - ArrayList
     public static void ArrayOrList() {
         String firstNumber = terminal("Enter first number");
         String secondNumber = terminal("Enter second number");
