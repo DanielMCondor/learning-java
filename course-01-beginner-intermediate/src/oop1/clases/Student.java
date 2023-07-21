@@ -1,4 +1,4 @@
-package oop1;
+package oop1.clases;
 
 public class Student {
     private int id;
